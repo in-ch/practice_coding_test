@@ -1,5 +1,5 @@
-function solution(nums) {
+function 폰켓몬(nums) {
   return Math.min(nums.length / 2, [...new Set(nums)].length);
 }
 
-solution([3, 3, 3, 2, 2, 2]);
+폰켓몬([3, 3, 3, 2, 2, 2]);

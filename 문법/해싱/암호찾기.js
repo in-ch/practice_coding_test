@@ -33,9 +33,15 @@
   
     return count;
   }
+
+// const data = require('fs').readFileSync('/Users/seonginch/Desktop/dashboard/practice_coding_test/문법/해싱/암호찾기.txt').toString().split('\n');
+
+
+// console.log(data[0], data[1], data[2]);
+// console.log(암호찾기(data[0], data[1], data[2]));
   
   
-console.log(암호찾기("4 2", "1122", "6677")); // 0 
+// console.log(암호찾기("4 2", "1122", "6677")); // 0 
 console.log(암호찾기("3 1", "122", "221")); // 2
-console.log(암호찾기("3 2", "124", "248")); // 1 
+// console.log(암호찾기("3 2", "124", "248")); // 1 
   

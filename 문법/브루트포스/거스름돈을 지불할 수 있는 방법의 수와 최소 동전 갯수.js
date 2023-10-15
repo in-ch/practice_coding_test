@@ -4,7 +4,7 @@ function solution() {
     let total = 120;
     let won10 = 10;
     let won50 = 50;
-    let minTotal = 9999;
+    let minTotal = Number.MAX_VALUE;
     let result = [];
 
     for(let i = 0; won10 * i <= total ; i++){

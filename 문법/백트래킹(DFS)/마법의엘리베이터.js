@@ -1,5 +1,5 @@
 // https://school.programmers.co.kr/learn/courses/30/lessons/148653
-
+// Lv 2
 function solution(storey) {
     const str = String(storey);
     const n = str.length; // str의 자릿수

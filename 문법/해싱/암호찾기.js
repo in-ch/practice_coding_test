@@ -1,4 +1,5 @@
 // https://www.acmicpc.net/problem/21559
+// Lv 2
 
 /**
  * @param inputStr 입력받은 문자열

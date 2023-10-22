@@ -1,8 +1,6 @@
 // 문제
 // https://www.acmicpc.net/problem/16637
-
-// 알고보니 다이나믹 프로그래밍이라고 하니 문제를 나중에 옮기도록 하자. 
-
+// Lv 3
 function calculate(n1, n2, s) {
     let result = 0;
     if (s === '+') {

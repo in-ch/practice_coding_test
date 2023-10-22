@@ -1,4 +1,5 @@
 // https://school.programmers.co.kr/learn/courses/30/lessons/154539
+// Lv 2
 
 // 내가 푼거 ㅋㅋ 
 function checkVal(_firstVal, _numbers) {

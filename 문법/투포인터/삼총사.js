@@ -1,4 +1,5 @@
 // https://school.programmers.co.kr/learn/courses/30/lessons/131705
+// Lv 1
 
 function solution(number) {
     let count = 0;

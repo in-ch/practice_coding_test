@@ -8,7 +8,6 @@ function solution(clothes) {
     
     for(let i=0; i<len; i++){
         obj[clothes[i][1]] = (obj[clothes[i][1]] || 1) + 1;
-        console.log('sex');
     }
     for(let key in obj){
         answer *= obj[key];

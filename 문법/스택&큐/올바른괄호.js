@@ -3,7 +3,6 @@
 function solution(s) {
     const strings = [...s];
     const array1 = [];
-    const result = false;
 
     for(let i = 0;i < strings.length; i++) {
         let pointer = strings[i];

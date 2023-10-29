@@ -1,3 +1,6 @@
+// https://school.programmers.co.kr/learn/courses/30/lessons/42583
+// Lv2 
+
 function solution(bridge_length, weight, truck_weights) {
     let passingTrucks = [];
     let answer = 0;

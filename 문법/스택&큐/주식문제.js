@@ -45,11 +45,6 @@ function solution(prices) {
     const stack = [];
 
     for (let i = 0; i < n; i++) {
-        const a_stackLength  = stack.length;
-        const a_pricesI = prices[i];
-        const a_stackStackLength = stack[stack.length - 1];
-        const a_pricesStackStackLength = prices[stack[stack.length - 1]];
-        const a_i = i;
         // prices[stack[stack.length -1]]는 이전 값이다. 
         // 이전 값보다 현재 루프의 price가 작으면 아래 수행 (밑에 pop을 하므로 스택값이 줄어들어서 계속 비교 가능)
         // 첫번쨰 인자 예제로 4번째 루프 (priceI가 2일때 드디어 while 실행)
@@ -69,4 +64,4 @@ function solution(prices) {
 }
 
 console.log(solution([1, 2, 3, 2, 3])); // [4, 3, 1, 1, 0]
-console.log(solution([5,4,3,2,5])); // [1,1,1,1,0]
+// console.log(solution([5,4,3,2,5])); // [1,1,1,1,0]

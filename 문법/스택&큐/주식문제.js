@@ -53,6 +53,7 @@ function solution(prices) {
             answer[top] = i - top;
         }
         stack.push(i);
+        debugger;
     }
 
     while (stack.length > 0) {

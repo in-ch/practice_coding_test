@@ -24,6 +24,7 @@ function solution(numbers) {
         return true;
     }
 
+    // index는 만들 숫자의 길이 숫자이다. 
     function dfs(index) {
         if (usedIdx.size === numbers.length) {
             return;
@@ -31,26 +32,29 @@ function solution(numbers) {
         if (!usedIdx.has(index)) {
             usedIdx.add(index);
             numStr += numbers[index];
+            // debugger;
         } else {
             return;
         }
-  
         if (numStr.length > 0 && isPrime(parseInt(numStr))) {
             answer++;
         }
   
         for (let i = 0; i < numbers.length; i++) {
+            console.log('qq  ' + numStr)
             dfs(i);
         }
   
         if (usedIdx.has(index)) {
-            usedIdx.delete(index);
-            numStr = numStr.slice(0, -1);
+            usedIdx.delete(index); 
+            numStr = numStr.slice(0, -1); // numStr에서 맨 뒤 숫자를 하나 뺀다.
+            // debugger;
         }
     }
   
   
     for (let i = 0; i < numbers.length; i++) {
+        console.log('zz  ' + numStr);
       dfs(i);
     }
   
@@ -58,5 +62,5 @@ function solution(numbers) {
 }
 
 console.log(solution("17")); // 3
-console.log(solution("011")); // 3
+// console.log(solution("011")); // 3
 // 0 1 1 11 110 101

@@ -30,16 +30,13 @@ function mySolution(k, dungeons) {
 
 function solution(k, dungeons) {
     let answer = -1;
-
-    let _debug_count = 0;
-
-    const dfs = (k, dungeons, prev) => {
-        _debug_count++;
+    const dfs = (k, _dungeons, prev) => {
       // for문이 있으므로 애초에 종료 조건이 있다. 
-      for (let i = 0; i < dungeons.length; i++) {
-        const [req, use] = dungeons[i];
+      for (let i = 0; i < _dungeons.length; i++) {
+        const [req, use] = _dungeons[i];
+
         if (!req || req > k) continue;
-        const copy = [...dungeons].map((v) => [...v]); // 다음 연산에 새로 생성.
+        const copy = [..._dungeons].map((v) => [...v]); // 다음 연산에 새로 생성.
         copy[i] = [null, null]; // 사용한 것은 null로 초기화
         dfs(k - use, copy, prev + 1);
       }

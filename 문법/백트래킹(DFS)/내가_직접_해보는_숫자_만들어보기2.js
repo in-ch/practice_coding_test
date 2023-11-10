@@ -38,5 +38,5 @@ function solution(array) {
     dfs(array, "");
     return answer;
 }
+
 console.log(solution([1,2,3]));
-console.log(_solution([1,2,3]));

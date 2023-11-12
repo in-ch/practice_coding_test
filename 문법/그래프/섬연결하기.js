@@ -1,8 +1,6 @@
 // https://school.programmers.co.kr/learn/courses/30/lessons/42861
 // Lv 3
 
-
-
 // 즉 가중치의 합이 가장 작은 트리를 구현하는 문제
 // 다시 말하자면 최소신장트리를 구하는 문제
 // 따라서 쿠루스칼 알고리즘을 사용하여 풀이하면 된다. (프림 알고리즘도 사용 가능)
@@ -23,13 +21,13 @@ const unionParent = (parent, c1, c2) => {
 // 두 섬의 동일 부모 여부를 조회하는 함수
 const solution = (n, costs) => {
     let answer = 0;
-    const parent = Array.from({ length: n }, (_, i) => i);
+    const parents = Array.from({ length: n }, (_, i) => i);
     costs.sort((a, b) => a[2] - b[2]);
 
     for (const [c1, c2, weight] of costs) {
-        if (findParent(parent, c1) !== findParent(parent, c2)) {
-        answer += weight;
-        unionParent(parent, c1, c2);
+        if (findParent(parents, c1) !== findParent(parents, c2)) {
+            answer += weight;
+            unionParent(parents, c1, c2);
         }
     }
 

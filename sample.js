@@ -1,25 +1,32 @@
-function solution(priorities, location) {
-    const queue = [];
-    const dataset = priorities.map((priority,idx)=>{
-        queue.push(priority);
-        return {
-            idx, 
-            priority
-        }
-    });
-    const processQueue = [];
-    queue.sort(((a,b) => b- a));
 
-    while(queue.length > 0) {
-        const _prior = queue.shift();
-        while(dataset[0].priority !== _prior ) {
-            dataset.push(dataset.shift());
-        }
-        processQueue.push(dataset.shift());
-    }
-    const processQueueIndex = processQueue.map((v) => v.idx);
-    return processQueueIndex.indexOf(location) + 1
+function findParent(c, p) {
+    if(p[c] === c) return c;
+    return p[c] = findParent(p[c], p);
 }
 
-console.log(solution([2, 1, 3, 2] , 2));
-console.log(solution([1, 1, 9, 1, 1, 1] , 0));
+function unionParent(c1, c2, p) {
+    const findedP1 = findParent(c1, p);
+    const findedP2 = findParent(c2, p);
+    if(findedP1 < findedP2) p[findedP2] = findedP1;
+    else p[findedP1] = findedP2;
+}
+
+
+const solution = (n, costs) => {
+    const parents = Array.from({length: n}, (_, i) => i);
+    let answer = 0;
+
+    costs.forEach((cost) => {
+        const [child1, child2, weight] = cost;
+        // 부모가 같은 지 비교하고 아닐 경우 
+        if(findParent(child1, parents) !== findParent(child2, parents)) {
+            answer += weight;
+            // 부모를 합친다.
+            unionParent(child1, child2, parents)
+        }
+    });
+
+    return answer;
+}
+
+console.log(solution(4, [[0,1,1],[0,2,2],[1,2,5],[1,3,1],[2,3,8]]));

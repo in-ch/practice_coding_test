@@ -21,17 +21,24 @@ const unionParent = (parent, c1, c2) => {
 // 두 섬의 동일 부모 여부를 조회하는 함수
 const solution = (n, costs) => {
     let answer = 0;
-    const parents = Array.from({ length: n }, (_, i) => i);
-    costs.sort((a, b) => a[2] - b[2]);
+    const parents = Array.from({ length: n }, (_, i) => i); // 0, 1, 2, 3
+    costs.sort((a, b) => a[2] - b[2]); // 비용이 작은 순서대로 배치
+                                       // [0, 1, 1]
+                                       // [1, 3, 1]
+                                       // [0, 2, 2]
+                                       // [1, 2, 5]
+                                       // [2, 3, 8]
 
     for (const [c1, c2, weight] of costs) {
         if (findParent(parents, c1) !== findParent(parents, c2)) {
+            // 부모가 같지 않으면 answer를 더하고, answer에 값을 더하고 부모를 합쳐 버림
             answer += weight;
             unionParent(parents, c1, c2);
+            // 첫 실행 때 [0, 0, 2, 3이 됨]
         }
     }
 
     return answer;
 };
   
-  console.log(solution(4, [[0,1,1],[0,2,2],[1,2,5],[1,3,1],[2,3,8]]));
+console.log(solution(4, [[0,1,1],[0,2,2],[1,2,5],[1,3,1],[2,3,8]]));

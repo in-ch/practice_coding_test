@@ -74,6 +74,8 @@ function solution(numbers, k) {
     return stack.join("");
 }
 
-console.log(solution("1924", 2));  // "94"
-console.log(solution("1231234", 3)); // "3234"
-console.log(solution("4177252841", 4)); // "775841"
+// console.log(solution("1924", 2));  // "94"
+// console.log(solution("1231234", 3)); // "3234"
+// console.log(solution("4177252841", 4)); // "775841"
+console.log(solution("1492", 2));  // "94"
+

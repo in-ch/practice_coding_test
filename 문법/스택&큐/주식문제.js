@@ -2,31 +2,25 @@
 // Lv 2
 
 // 효율성에서 떨어짐 
-// pricesQueue 배열에 prices 배열을 복사하므로 복사에 O(n) 시간이 걸림
-// while 루프를 사용하여 pricesQueue 배열의 길이가 0이 될때까지 반복한다. 따라서 최대 n번 반복된다.
-// 내부 루프는 lastPrices 배열의 길이에 비례하는 횟수만큼 반복된다. 
-// lastPrices 배열의 길이는 현재 가격을 제외한 나머지 가격의 수이다.
-// 따라서 내부 루프는 처음에는 n-1번, 그 다음에는 n-2번, 그 다음에는 n-3번, ... , 1번까지 반복한다.
-// 이 경우 내부 루프의 총 반복 횟수는 대략  (n-1) + (n-2) + (n-3) + ... + 1이 된다.
-// 여기서 while문과 for문의 시간 복잡도가 서로 곱해지므로 O(n^2)이 된다. 
-function _solution(prices) {
-    let pricesQueue = [...prices];
-    let answer = [];
+// 일단 저런 식으로 매번 queue를 선언한다는 것 자체가 문제임.... 저러면 안됨.. 
+function solution(prices) {
+    const results = [];
 
-    while(pricesQueue.length !== 0) {
-        const price = pricesQueue.shift(); // 1
-        const lastPrices = [...pricesQueue]; // 2, 3, 2, 3
-
-        for(let i = 0 ; i<lastPrices.length; i++) {
-            if(price > lastPrices[i] || i === lastPrices.length - 1) {
-                answer.push(i + 1);
-                break;
-            }
+    prices.forEach((price, index) => {
+        const queue = prices.slice(index + 1, prices.length);
+        let count = 0;
+        while(queue.length > 0 && !(queue[0] < price)) {
+            count++;
+            queue.shift();
         }
-    }
-    return [...answer, 0];
+        if(index !== prices.length - 1 && count === 0)  {
+            results.push(1);
+        } else {
+            results.push(count);
+        }
+    });
+    return results;
 }
-
 // 이 코드는 단일 루프로 배열을 한 번만 통과하므로 시간 복잡도 O(n)이다. 
 // 스택은 현재 시점에서 낮아진 가격에 대한 인덱스를 저장하고, 가격이 상승할 때 해당 위치의 인덱스와의 차이를 계산하여 결과를 구한다. 
 // 첫 번째 루프 (for 루프): 주어진 배열의 길이 n에 대해 한 번 반복한다. 

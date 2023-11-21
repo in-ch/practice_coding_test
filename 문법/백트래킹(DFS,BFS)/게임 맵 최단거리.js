@@ -85,7 +85,7 @@ function _solution(maps) {
 function solution(maps) {
     const rows = maps.length;
     const cols = maps[0].length;
-    const dx = [0, 0, 1, -1]; // 상하좌우
+    const dx = [0, 0, -1, 1]; // 상하좌우
     const dy = [-1, 1, 0, 0]; // 상하좌우
 
     const queue = [{ x: 0, y: 0, count: 1 }];

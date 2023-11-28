@@ -42,6 +42,6 @@ function solution(begin, target, words) {
     return 0; // 변환할 수 없는 경우
 }
   
-  // 예제 테스트
-  console.log(solution("hit", "cog", ["hot", "dot", "dog", "lot", "log", "cog"])); // 4
-  console.log(solution("hit", "cog", ["hot", "dot", "dog", "lot", "log"])); // 0
+// 예제 테스트
+console.log(solution("hit", "cog", ["hot", "dot", "dog", "lot", "log", "cog"])); // 4
+console.log(solution("hit", "cog", ["hot", "dot", "dog", "lot", "log"])); // 0

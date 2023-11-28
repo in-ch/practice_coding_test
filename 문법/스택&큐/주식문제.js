@@ -45,6 +45,7 @@ function solution(prices) {
         while (stack.length > 0 && prices[i] < prices[stack[stack.length - 1]]) {
             const top = stack.pop();
             answer[top] = i - top;
+            debugger;
         }
         stack.push(i);
         debugger;

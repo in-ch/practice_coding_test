@@ -11,9 +11,9 @@ function calculate(n1, n2, s) {
       result = n1 * n2;
     }
     return result;
-  }
+}
   
-  function solution(N, _input) {
+function solution(N, _input) {
     
     let input = [..._input];
     const A = []; // +, -, * 등의 수식 배열
@@ -51,7 +51,7 @@ function calculate(n1, n2, s) {
     }
   
     return dp[N];
-  }
+}
 
 console.log(solution(9, "3+8*7-9*2"));
 // console.log(solution(19, "1*2+3*4*5-6*7*8*9*0"));

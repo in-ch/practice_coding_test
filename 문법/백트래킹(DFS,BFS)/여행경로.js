@@ -43,7 +43,6 @@ function solution(tickets) {
             dfs(nextNode);
         }
         answer.unshift(node); // 경로를 앞에 추가
-        debugger
     }
     dfs("ICN");
     return answer;

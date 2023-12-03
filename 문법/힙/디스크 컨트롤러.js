@@ -6,13 +6,13 @@
 
 // 현재 시점에서 처리할 수 있는 작업인지를 판별하는 조건은 작업의 요청 시간이 바로 이전에 완료한 작업의 시작 시간(start)보다 크고 현재 시점(now)보다 작거나 같아야 한다.
 
-// 만약 현재 ㅊ리할 수 있는 작업이 없다면, 남아 있는 작업들의 요청 시간이 아직 오지 않은 것이기 때문에 현재 시점(now)을 하나 올려준다.
+// 만약 현재 처리할 수 있는 작업이 없다면, 남아 있는 작업들의 요청 시간이 아직 오지 않은 것이기 때문에 현재 시점(now)을 하나 올려준다.
 function solution(jobs) {
     let answer = 0;
-    let now = 0;
-    let i = 0;
-    let start = -1;
-    let heap = [];
+    let now = 0; // 현재 시점
+    let i = 0; // 실행 횟사
+    let start = -1; // 시작
+    let heap = []; // 힙
 
     while (i < jobs.length) {
         for (let j = 0; j < jobs.length; j++) {
@@ -21,7 +21,7 @@ function solution(jobs) {
                 heap.sort((a, b) => a[0] - b[0]);
             }
         }
-
+        debugger;
         if (heap.length > 0) {
             let current = heap.shift();
             start = now;

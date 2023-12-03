@@ -23,5 +23,5 @@ function solution(storey) {
 }
 
 
-console.log(solution(16));
-console.log(solution(2554));
+console.log(solution(16)); // 6
+console.log(solution(2554)); // 16

@@ -3,7 +3,7 @@
 
 // 접근 방식부터가 잘못됐었음. 
 // 그냥 DFS나 Union Find, 트리 방식으로 하나씩 끊어보는 게 답이였음.. 
-function solution(n, wires) {
+function _solution(n, wires) {
     var answer = Infinity;
     const wireObj = {};
 

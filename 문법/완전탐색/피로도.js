@@ -47,4 +47,4 @@ function solution(k, dungeons) {
     return answer;
   }
 
-console.log(solution(80, [[80,20],[50,40],[30,10]]));
+console.log(solution(80, [[80,20],[50,40],[30,10]])); // 3

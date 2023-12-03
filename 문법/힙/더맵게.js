@@ -23,9 +23,6 @@ function _solution(scoville, K) {
     return mixCount;
 }
 
-
-
-
 // 우선 순위 큐를 이용해서 풀어보자. 
 class PriorityQueue {
     constructor() {

@@ -42,7 +42,7 @@ function solution(n, times) {
         let maxInMid = times.reduce((acc,cur)=>acc += Math.floor(mid/cur) , 0);
 
         if( n <= maxInMid) {
-            max = mid -1;
+            max = mid - 1;
         } else {
             min = mid + 1;
         }

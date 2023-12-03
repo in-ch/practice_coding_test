@@ -9,7 +9,7 @@
 const findParent = (parent, c) => {
     if (parent[c] === c) return c;
     return (parent[c] = findParent(parent, parent[c]));
-  };
+};
   
 // 두 섬의 부모를 하나로 합치는 함수
 const unionParent = (parent, c1, c2) => {

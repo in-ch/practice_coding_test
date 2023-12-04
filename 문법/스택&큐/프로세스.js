@@ -41,7 +41,7 @@ function mySolution(priorities, location) {
         }
     });
     const processQueue = [];
-    queue.sort(((a,b) => b- a));
+    queue.sort(((a,b) => b - a));
 
     while(queue.length > 0) {
         const _prior = queue.shift();

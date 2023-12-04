@@ -45,6 +45,6 @@ function solution(k, dungeons) {
 
     dfs(k, dungeons, 0);
     return answer;
-  }
+}
 
 console.log(solution(80, [[80,20],[50,40],[30,10]])); // 3

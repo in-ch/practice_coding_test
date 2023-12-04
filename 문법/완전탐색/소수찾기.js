@@ -32,7 +32,6 @@ function solution(numbers) {
         if (!usedIdx.has(index)) {
             usedIdx.add(index);
             numStr += numbers[index];
-            // debugger;
         } else {
             return;
         }
@@ -41,20 +40,17 @@ function solution(numbers) {
         }
   
         for (let i = 0; i < numbers.length; i++) {
-            console.log('qq  ' + numStr)
             dfs(i);
         }
   
         if (usedIdx.has(index)) {
             usedIdx.delete(index); 
             numStr = numStr.slice(0, -1); // numStr에서 맨 뒤 숫자를 하나 뺀다.
-            // debugger;
         }
     }
   
   
     for (let i = 0; i < numbers.length; i++) {
-        console.log('zz  ' + numStr);
       dfs(i);
     }
   

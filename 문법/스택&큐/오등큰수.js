@@ -2,6 +2,7 @@
 
 function solution(N, seq) {
     const count = new Array(1000001).fill(0); // [0, 0, 0, 0, ....., 0]
+                                              // [0, 3, 2, 1, 1, ......]
     const stack = [];
     const res = new Array(N).fill(-1); // [-1. -1, -1, -1, -1, -1, -1]
 
@@ -22,4 +23,4 @@ function solution(N, seq) {
     return res.join(" ");
 }
 
-console.log(solution(7, [1, 1, 2, 3, 4, 2, 1]));
+console.log(solution(7, [1, 1, 2, 3, 4, 2, 1])); // -1 -1 1 2 2 1 -1

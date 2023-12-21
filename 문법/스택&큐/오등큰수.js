@@ -15,7 +15,7 @@ function solution(N, seq) {
         // count[seq[stack[stack.length - 1]]] < count[seq[i]]: 이 조건은 스택의 맨 위에 있는 요소의 카운트(seq[stack[stack.length - 1]])와 
         // 현재 요소의 카운트(seq[i])를 비교한다. 
         // 스택의 맨 위에 있는 요소의 카운트가 현재 요소의 카운트보다 작은 경우에만 루프가 계속된다. 
-        while (stack.length > 0 && count[seq[stack[stack.length - 1]]] < count[seq[i]]) {
+        while (stack.length > 0 && count[seq[stack.at(-1)]] < count[seq[i]]) {
             res[stack.pop()] = seq[i];
         }
         stack.push(i);

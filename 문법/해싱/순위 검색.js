@@ -78,7 +78,7 @@ function solution(infos, querys) {
     for(let [key, value] of rule){
         rule.set(key, value.sort((a, b) => a - b));
     }
-
+    
     return querys.map(e => {
         const conditions = e.split(/ and | |-/i).filter(e => e);
         return search(rule, conditions);
@@ -87,6 +87,12 @@ function solution(infos, querys) {
 
 const search = (rule, conditions) => {
     const score = conditions.pop();
+
+    
+    var a = Array.from(rule.keys())
+    .filter(key => conditions.every(v => key.includes(v)));
+
+    debugger;
     return Array.from(rule.keys())
         .filter(key => conditions.every(v => key.includes(v)))
         .reduce((a, c) => a + rule.get(c).slice(lowerBound(rule.get(c), score)).length, 0);
